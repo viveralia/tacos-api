@@ -13,8 +13,8 @@ const app = express()
 app.set('port', env.port)
 
 app.use(cors({ origin: '*' }))
-app.use(morgan('tiny') as any)
-app.use(express.json() as any)
+app.use(morgan('tiny'))
+app.use(express.json())
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerJSDoc(options)))
 app.use('/tacos', tacosRouter)
